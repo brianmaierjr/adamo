@@ -1,0 +1,32 @@
+<!--- Color mode button --->
+<button class="color-mode__btn" aria-label="Toggle color mode">
+	Dark Mode
+</button>
+
+<script is:inline>
+	if (window.CSS && CSS.supports("color", "var(--primary)")) {
+		var toggleColorMode = function toggleColorMode(e) {
+			// Switch to Light Mode
+			if (
+				document.documentElement.getAttribute("color-mode") === "dark"
+			) {
+				// Sets the custom html attribute
+				document.documentElement.setAttribute("color-mode", "light");
+				localStorage.setItem("color-mode", "light");
+				this.innerHTML = "Dark Mode";
+			} else {
+				/* Switch to Dark Mode */
+				document.documentElement.setAttribute("color-mode", "dark");
+				localStorage.setItem("color-mode", "dark");
+				this.innerHTML = "Light Mode";
+			}
+		};
+
+		var toggleColorButton = document.querySelector(".color-mode__btn");
+		toggleColorButton.addEventListener("click", toggleColorMode);
+	} else {
+		// If the feature isn't supported, then we hide the toggle buttons
+		var btnContainer = document.querySelector(".color-mode__header");
+		btnContainer.style.display = "none";
+	}
+</script>

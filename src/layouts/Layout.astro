@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SkipToLink from "../components/SkipToLink.astro";
+import "../sass/styles.scss";
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<BaseHead />
+	<body>
+		<SkipToLink />
+		<Header />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+		<script>
+			(function () {
+				document.documentElement.classList.replace("no-js", "js");
+			})();
+		</script>
+	</body>
+</html>

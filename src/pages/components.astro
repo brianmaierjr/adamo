@@ -1,0 +1,35 @@
+---
+import Button from "../components/Button.astro";
+import Stack from "../components/Stack.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="wrapper section flow">
+		<h1>Components</h1>
+
+		<h2>Button</h2>
+
+		<h3>Small Button</h3>
+		<Button size="small">Small Button</Button>
+
+		<h3>Default Button</h3>
+		<Stack gap="small">
+			<Button>Click me</Button>
+			<Button href="/">Click me</Button>
+		</Stack>
+
+		<h2>Stack</h2>
+		<h3>Horizontal Stack</h3>
+		<Stack gap="small">
+			<Button>Click me</Button>
+			<Button href="/">Click me</Button>
+		</Stack>
+
+		<h3>Vertical Stack</h3>
+		<Stack gap="small" align="start" vertical>
+			<Button>Click me</Button>
+			<Button href="/">Click me</Button>
+		</Stack>
+	</div>
+</Layout>

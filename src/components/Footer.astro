@@ -1,0 +1,21 @@
+---
+import { menu } from "../data/settings";
+---
+
+<footer class="siteFooter section--small">
+	<div class="siteFooter__wrapper wrapper flex items-center justify-between">
+		<div class="logo siteFooter__logo">Logo</div>
+
+		<nav aria-label="Footer Navigation">
+			<ul id="menu" class="list-reset flex" role="list">
+				{
+					menu.map((item) => (
+						<li class="element">
+							<a href={item.link}>{item.name}</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</footer>

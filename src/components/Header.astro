@@ -1,0 +1,46 @@
+---
+import ColorModeToggle from "./ColorModeToggle.astro";
+import MainMenu from "./MainMenu.vue";
+---
+
+<header class="siteHeader section--small">
+	<div class="siteHeader__wrapper wrapper flex items-center justify-between">
+		<a href="/" class="siteHeader__logo logo">Logo</a>
+		<div class="flex items-center">
+			<MainMenu client:load />
+			<ColorModeToggle />
+		</div>
+	</div>
+</header>
+
+<style lang="scss">
+	@use "../sass/abstracts" as *;
+
+	.siteHeader {
+		nav {
+			ul {
+				display: none;
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: var(--surface1);
+				padding: var(--space-l);
+
+				&.active {
+					display: block;
+				}
+
+				@include min(md) {
+					width: auto;
+					height: auto;
+					position: static;
+					display: flex;
+					gap: var(--gap, 1em);
+					padding: 0;
+				}
+			}
+		}
+	}
+</style>

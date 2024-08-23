@@ -1,0 +1,110 @@
+html {
+	background-color: var(--surface1);
+	scroll-behavior: smooth;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	color: var(--text-color);
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+		segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+		arial, sans-serif;
+	font-size: var((--step-0), 1rem);
+	line-height: var(--body-line-height, 1.5);
+	font-weight: 400;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+// Text Seclection
+
+::selection {
+	background-color: var(--color-primary);
+	color: var(--white);
+}
+::-moz-selection {
+	background-color: var(--color-primary);
+	color: var(--white);
+}
+
+// Scrollbar
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--surface2) var(--color-primary);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 0.6em;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--surface2);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary);
+	border-radius: 0;
+}
+
+main {
+	flex: 1;
+}
+
+// Links
+
+a {
+	color: var(--link-color);
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// Wrapper
+.wrapper {
+	width: Min(calc(100% - var(--space-l)), 100rem);
+	margin-inline: auto;
+
+	&--fullWidth {
+		width: Min(100%, 125rem);
+	}
+}
+
+// Section Spacing
+.section {
+	padding-block: var(--space-l-3xl);
+
+	&--small {
+		padding-block: var(--space-s-l);
+	}
+}
+
+// Flow
+.flow > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+.flow {
+	* {
+		max-width: 65ch;
+	}
+}
+
+// Grid
+.grid {
+	display: grid;
+	gap: var(--gap, 1em);
+}
+
+// Flex
+.flex {
+	display: flex;
+	gap: var(--gap, 1em);
+}

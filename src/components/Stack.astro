@@ -1,0 +1,93 @@
+---
+interface Props {
+	gap?: "small" | "medium" | "large" | "xlarge" | "xxlarge" | "xxxlarge";
+	vertical?: boolean;
+	justify?: "start" | "end" | "center" | "space-between" | "space-around";
+	align?: "start" | "end" | "center" | "stretch";
+}
+
+const { gap, vertical, justify = "start", align = "center" } = Astro.props;
+---
+
+<div
+	class={`stack gap-${gap} justify-${justify} align-${align} ${
+		vertical ? "flex-col" : ""
+	}`}
+>
+	<slot />
+</div>
+
+<style lang="scss">
+	.stack {
+		display: flex;
+		flex-wrap: wrap;
+
+		// Gap
+		&.gap-small {
+			gap: var(--space-s);
+		}
+
+		&.gap-medium {
+			gap: var(--space-m);
+		}
+
+		&.gap-large {
+			gap: var(--space-l);
+		}
+
+		&.gap-xlarge {
+			gap: var(--space-xl);
+		}
+
+		&.gap-xxlarge {
+			gap: var(--space-2xl);
+		}
+
+		&.gap-xxxlarge {
+			gap: var(--space-3xl);
+		}
+
+		// Justify
+		&.justify-start {
+			justify-content: flex-start;
+		}
+
+		&.justify-end {
+			justify-content: flex-end;
+		}
+
+		&.justify-center {
+			justify-content: center;
+		}
+
+		&.justify-space-between {
+			justify-content: space-between;
+		}
+
+		&.justify-space-around {
+			justify-content: space-around;
+		}
+
+		// Align
+		&.align-start {
+			align-items: flex-start;
+		}
+
+		&.align-end {
+			align-items: flex-end;
+		}
+
+		&.align-center {
+			align-items: center;
+		}
+
+		&.align-stretch {
+			align-items: stretch;
+		}
+
+		// Vertical
+		&.flex-col {
+			flex-direction: column;
+		}
+	}
+</style>
