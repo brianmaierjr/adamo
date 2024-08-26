@@ -3,15 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import { SEO } from "astro-seo";
 import { Image } from 'astro:assets';
 import logoImage from '../../src/img/logo.svg';
+import bgImage from '../../src/img/background.jpg';
 
 ---
 
 <Layout title="adamo">
-	<img class="background" src="../../src/img/background.jpg" alt="adamo background">
+	<Image class="background" src={bgImage} alt="adamo background" />
 	<div class="flow content">
 		<h1 class="logo"><Image src={logoImage} alt="A bird." width="300" height="86" /><span class="sr-only">adamo</span></h1>
+		<h2>Luxury Living coming soon to Ewing, NJ</h2>
 		<h2 class="formHeading">Sign up for updates below</h2>
-		<form class="signupForm" action="">
+		<form class="signupForm" method="POST" data-netlify="true">
 			<label class="sr-only" for="email">Email</label>
 			<div class="signupForm__fields">
 				<input id="email" name="email" type="text" placeholder="Email address">

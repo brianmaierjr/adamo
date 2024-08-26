@@ -16,9 +16,14 @@
 	align-items: center;
 
 	&__fields {
+		width: 100%;
 		display: flex;
 		align-items: stretch;
 		gap: var(--space-2xs);
+
+		input[type="text"] {
+			flex: 1;
+		}
 	}
 }
 
