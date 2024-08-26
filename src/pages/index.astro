@@ -1,15 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { SEO } from "astro-seo";
+import { Image } from 'astro:assets';
+import logoImage from '../../src/img/logo.svg';
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<div class="wrapper section flow">
-		<h1>adamo</h1>
-		<h2 class="h4">Sign up for updates below</h2>
-		<form action="">
-			<label for="email"></label>
-			<input type="text" placeholder="Email address">
+<Layout title="adamo">
+	<img class="background" src="../../src/img/background.jpg" alt="adamo background">
+	<div class="flow content">
+		<h1 class="logo"><Image src={logoImage} alt="A bird." width="300" height="86" /><span class="sr-only">adamo</span></h1>
+		<h2 class="formHeading">Sign up for updates below</h2>
+		<form class="signupForm" action="">
+			<label class="sr-only" for="email">Email</label>
+			<div class="signupForm__fields">
+				<input id="email" name="email" type="text" placeholder="Email address">
+				<input class="button small" type="submit" value="Stay Updated">
+			</div>
 		</form>
 	</div>
+
 </Layout>

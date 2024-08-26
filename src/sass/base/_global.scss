@@ -54,6 +54,21 @@ main {
 	flex: 1;
 }
 
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: var(--space-l);
+	background-color: rgb(67, 67, 65, 0.8);
+	height: 100vh;
+	position: relative;
+	z-index: 10;
+
+	@media (min-width: 800px) {
+		width: 50vw;
+	}
+}
+
 // Links
 
 a {
@@ -105,4 +120,36 @@ a {
 .flex {
 	display: flex;
 	gap: var(--gap, 1em);
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-xs) var(--space-l);
+	background-color: var(--black);
+	color: var(--white);
+	text-decoration: none;
+	outline: 0;
+	border: none;
+	transition: 0.1s all ease-in-out;
+
+	&:hover {
+		background-color: var(--color-primary-dark);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--text-color);
+		outline-offset: 2px;
+	}
+
+	// Small
+	&.small {
+		font-size: var(--step--1);
+		padding: var(--space-2xs) var(--space-s);
+	}
+}
+
+input {
+	font-size: var((--step-0), 1rem);
 }

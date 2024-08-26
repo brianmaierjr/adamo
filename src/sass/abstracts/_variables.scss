@@ -1,30 +1,17 @@
 :root {
 	// Colors
-	--black: rgb(13, 13, 13);
-	--charcoal: #151515;
-	--gray--light: #efefef;
-	--purple: darkorchid;
-	--purple--dark: indigo;
+	--black: #2f2f30;
+	--charcoal: #434341;
+	--gray--light: #f0ede9;
+	--white--light: #ede4db;
 	--white: white;
 
-	&[color-mode="light"] {
-		--surface1: var(--white);
-		--surface2: var(--gray--light);
-		--text-color: var(--black);
-		--link-color: var(--purple);
-		--color-primary: var(--purple);
-		--color-primary-dark: var(--purple--dark);
-	}
-
-	&[color-mode="dark"] {
-		--purple: mediumorchid;
-		--surface1: var(--charcoal);
-		--surface2: var(--black);
-		--text-color: var(--white);
-		--link-color: var(--purple);
-		--color-primary: var(--purple);
-		--color-primary-dark: var(--purple--dark);
-	}
+	--surface1: var(--black);
+	--surface2: var(--charcoal);
+	--text-color: var(--white);
+	--link-color: var(--purple);
+	--color-primary: var(--purple);
+	--color-primary-dark: var(--purple--dark);
 
 	// Font Scale
 	/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,2000,20,1.25,5,2,2000&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l|xl-3xl|l-3xl|l-2xl&g=s,l,xl,12 */
