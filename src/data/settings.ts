@@ -1,13 +1,9 @@
 // Main Site Settings
 export const settings = {
-	site: "https://bm-static-starter.netlify.app",
-	title: "Static Starter Astro",
-	description: "Astro Static Starter",
+	site: "https://adamonj.netlify.app",
+	title: "adamo",
+	description: "Luxury living in Ewing, NJ",
 };
 
 // Main Menu
-export const menu = [
-	{ name: "Home", link: "/" },
-	{ name: "Components", link: "/components" },
-	{ name: "Contact", link: "/contact" },
-];
+export const menu = [{ name: "Home", link: "/" }];
