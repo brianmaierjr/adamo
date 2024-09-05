@@ -3,14 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import { SEO } from "astro-seo";
 import { Image } from 'astro:assets';
 import logoImage from '../../src/img/logo.svg';
-import bgImage from '../../src/img/22129_Rendering1-Rev1C.jpg';
+import bgImage from '../../src/img/22129_Rendering4RC.jpg';
 
 ---
 
 <Layout title="adamo">
 	<Image class="background" src={bgImage} alt="adamo background" />
 	<div class="flow content">
-		<h1 class="logo"><Image src={logoImage} alt="A bird." width="300" height="86" /><span class="sr-only">adamo</span></h1>
+		<h1 class="logo"><Image src={logoImage} alt="adamo luxury living" width="300" height="134" /><span class="sr-only">adamo</span></h1>
 		<h2>Luxury living coming soon to Ewing, New Jersey!</h2>
 		<h2 class="formHeading">Sign up for updates</h2>
 		<form class="signupForm" method="POST" data-netlify="true">
@@ -23,3 +23,49 @@ import bgImage from '../../src/img/22129_Rendering1-Rev1C.jpg';
 	</div>
 
 </Layout>
+
+<style lang="scss">
+.background {
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.signupForm {
+	display: flex;
+	gap: var(--space-xs);
+	align-items: center;
+
+	&__fields {
+		width: 100%;
+		display: flex;
+		align-items: stretch;
+		gap: var(--space-2xs);
+		flex-direction: column;
+
+		@media (min-width: 500px) {
+			flex-direction: row;
+		}
+
+		input[type="text"] {
+			flex: 1;
+		}
+	}
+}
+
+.formHeading {
+	font-size: var(--font-size-3);
+	font-weight: 400;
+}
+
+.logo {
+	margin-bottom: var(--space-xs);
+}
+
+</style>
