@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://bm-static-starter.netlify.app/sitemap-index.xml
+Sitemap: https://adamoewing.com/sitemap-index.xml
